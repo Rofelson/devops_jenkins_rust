@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+  agent {
+    docker {image 'rust:1.67'}
+  }
   stages {
     stage('Install rustup') {
       steps {
