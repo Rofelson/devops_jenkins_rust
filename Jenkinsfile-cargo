@@ -4,6 +4,7 @@ pipeline {
     stage('Install rustup') {
       steps {
         sh 'curl https://sh.rustup.rs -sSf | sh -s -- -y'
+        sh 'cd && source .profile'
       }
     }
     stage('verify Cargo installation') {
