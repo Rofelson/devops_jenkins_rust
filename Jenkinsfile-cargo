@@ -1,6 +1,11 @@
 pipeline {
-  node master
+  agent any
   stages {
+    stage('Install rustup') {
+      steps {
+        sh 'curl https://sh.rustup.rs -sSf | sh -s -- -y'
+      }
+    }
     stage('verify Cargo installation') {
       steps {
         sh 'cargo --version'
