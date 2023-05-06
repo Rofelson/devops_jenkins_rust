@@ -3,11 +3,6 @@ pipeline {
     docker {image 'rust:1.67'}
   }
   stages {
-    stage('Install rustup') {
-      steps {
-        sh 'curl https://sh.rustup.rs -sSf | sh -s -- -y'
-      }
-    }
     stage('verify Cargo installation') {
       steps {
         sh 'cargo --version'
